@@ -1,4 +1,8 @@
 config/config.local.json
+reverse/config/config.local.json
+reverse/keys/tunnel_key
+reverse/logs/
+logs/
 *.log
 .DS_Store
 Thumbs.db

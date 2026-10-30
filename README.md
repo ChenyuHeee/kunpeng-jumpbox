@@ -2,6 +2,12 @@
 
 临时 SSH 跳板：在朋友的 **Windows 11** 上用系统自带的 `netsh interface portproxy` 开一个 TCP 端口转发，把内网鲲鹏服务器的 22 端口送到公网。你在 Mac 上直接 `ssh -p 2222` 连过去。
 
+> **两种模式，按网络环境选：**
+> - **Windows 有公网入站**（EIP、端口映射、安全组放行）→ 用根目录的 `setup.cmd`，即本文下面的 direct 模式。
+> - **Windows 只有内网地址**（例如 `10.150.229.206`，公网进不来）→ 用 [`reverse/`](reverse/README.md)：Windows 主动连公网中转机，Mac 连中转机；Windows 仍然是到鲲鹏的唯一跳板。
+>
+> 你现在的情况是 `10.150.229.206` 内网地址，**用 `reverse/`**。
+
 - 不需要 frp / ngrok / 另一台公网服务器；
 - 跳板本身不需要在鲲鹏服务器上安装任何东西（可选的 `ssh-copy-id` 只是给你的账号加公钥）；
 - Windows 只做四层 TCP 转发，不解密 SSH，也不保存密码；

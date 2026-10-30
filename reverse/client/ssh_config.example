@@ -1,0 +1,20 @@
+# Append to ~/.ssh/config on the Mac.
+# This assumes you already have the "hcy-chenyu" host configured
+# (User chenyu, HostName 114.55.135.102) as in ~/.ssh/config.
+#
+# Then:  ssh kunpeng
+#        scp file kunpeng:~
+#        VS Code Remote-SSH -> Host "kunpeng"
+#
+# RDP to the Windows desktop (if Remote Desktop is enabled on it):
+#   ssh -N -L 13389:127.0.0.1:13389 hcy-chenyu
+#   then connect your RDP client to 127.0.0.1:13389
+
+Host kunpeng
+    HostName 127.0.0.1
+    Port 2222
+    User shijiaxin
+    ProxyJump hcy-chenyu
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+    # IdentityFile ~/.ssh/id_ed25519

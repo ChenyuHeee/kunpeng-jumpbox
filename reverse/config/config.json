@@ -1,0 +1,29 @@
+{
+  "sshUser": "shijiaxin",
+  "macJumpHost": "hcy-chenyu",
+  "relay": {
+    "host": "114.55.135.102",
+    "port": 22,
+    "user": "kunpeng-tunnel"
+  },
+  "forwards": [
+    {
+      "name": "kunpeng-ssh",
+      "remotePort": 2222,
+      "targetHost": "10.140.35.70",
+      "targetPort": 22
+    },
+    {
+      "name": "windows-rdp",
+      "remotePort": 13389,
+      "targetHost": "127.0.0.1",
+      "targetPort": 3389
+    }
+  ],
+  "keepalive": {
+    "serverAliveInterval": 30,
+    "serverAliveCountMax": 3,
+    "connectTimeout": 15,
+    "retryDelaySeconds": 10
+  }
+}
