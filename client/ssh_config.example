@@ -1,0 +1,14 @@
+# Append this block to ~/.ssh/config on your Mac.
+# Replace <WINDOWS_PUBLIC_IP> with the public address that reaches the Windows host.
+#
+# Then:  ssh kunpeng
+#        scp file kunpeng:~
+#        VS Code Remote-SSH -> Host "kunpeng"
+
+Host kunpeng
+    HostName <WINDOWS_PUBLIC_IP>
+    Port 2222
+    User shijiaxin
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+    # IdentityFile ~/.ssh/id_ed25519

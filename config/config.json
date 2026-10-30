@@ -1,0 +1,12 @@
+{
+  "sshUser": "shijiaxin",
+  "allowFrom": "auto",
+  "forwards": [
+    {
+      "name": "ssh",
+      "listenPort": 2222,
+      "targetHost": "10.140.35.70",
+      "targetPort": 22
+    }
+  ]
+}
